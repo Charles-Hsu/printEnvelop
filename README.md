@@ -4,6 +4,8 @@ https://github.com/mpdf/mpdf
 
 /*   */
 
+<pre>
+
 // load csv to sublime
 // first, save with encoding utf-8 with bom
 // then, save with encoding utf-8
@@ -130,6 +132,7 @@ UPDATE customer SET address=REPLACE(address,'新店區','');
 //update customer set address='台北市中正路707巷1之1號2樓' where cust_no='06181';
 //update customer set address='台北市中正路707巷13之1號9樓' where cust_no='06352';
 
+</pre>
 
 修改 6e_example_CJK.php
 修改資料庫名稱
