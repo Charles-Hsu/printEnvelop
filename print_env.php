@@ -39,7 +39,6 @@
             
             $gendar = $row[4];
 
-
             if ($gendar == '1') {
               $title = "先生";
             } else if ($gendar == '2') {
@@ -48,8 +47,14 @@
               $title = "";
             }
 
-            echo "($cust_no)($address)($name)($title)<br>";
+            $sql = "SELECT city,area FROM zip WHERE zip = $zip";
+            
+            $data = $db->query($sql);
+            $zip_row = $data->fetchArray();
+            $city = $zip_row[0];
+            $area = $zip_row[1];
 
+            echo "($zip)($city)($area)($address)($name)($title)($cust_no)<br><pagebreak>";
         }
     }
 ?>
