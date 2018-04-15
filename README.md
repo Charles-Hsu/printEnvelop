@@ -2,8 +2,6 @@
 
 https://github.com/mpdf/mpdf
 
-/*   */
-
 <pre>
 
 // load csv to sublime
