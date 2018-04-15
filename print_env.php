@@ -73,7 +73,11 @@ h1 {
             $city = $zip_row[0];
             $area = $zip_row[1];
 
-            echo "($zip)($city)($area)($address)($name)($title)($cust_no)<br>";
+            echo "<div class='zip'>($zip)</div>";
+            echo "<div class='cityArea'>($city)($area)</div>";
+            echo "<div class='address'>($address)</div>";
+            echo "<div class='nameTitle'>($name) ($title)</div>";
+            echo "<div class='cust_no'>($cust_no)</div>";
             echo "<div class='pagebreak'></div>";
         }
     }
