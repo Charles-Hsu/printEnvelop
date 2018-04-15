@@ -2,20 +2,33 @@
 <html>
 <head>
 <title>列印信封</title>
+<style>
+body {
+    background-color: linen;
+}
+
+h1 {
+    color: maroon;
+    margin-left: 40px;
+} 
+
+.pagebreak { page-break-before: always; } /* page-break-after works, as well */
+
+</style>
 </head>
 <body>
 
 <?php
 
     $db = new SQLite3('6e20180413.db');
-    var_dump($db);
+    // var_dump($db);
 
     if (count($_POST)) {
         $from_no = $_POST['from'];
         $to_no   = $_POST['to'];
         // $db = new SQLite3('6e20180413.db');
         $query = "SELECT zip,address,name,cust_no,gendar FROM customer where print = 'Y' AND cast(cust_no as decimal) > $from_no AND cast(cust_no as decimal) < $to_no";
-        echo $query;
+        // echo $query;
         $data = $db->query($query);
 
         while ($row = $data->fetchArray()) {
@@ -47,14 +60,21 @@
               $title = "";
             }
 
-            $sql = "SELECT city,area FROM zip WHERE zip = $zip";
-            
-            $data = $db->query($sql);
-            $zip_row = $data->fetchArray();
+            $sql = "SELECT city,area FROM zip WHERE CAST(zip as number) = $zip";
+            // echo $sql;
+            $r = $db->query($sql);
+
+            // var_dump($r);
+
+            $city = "";
+            $area = "";
+
+            $zip_row = $r->fetchArray();
             $city = $zip_row[0];
             $area = $zip_row[1];
 
-            echo "($zip)($city)($area)($address)($name)($title)($cust_no)<br><pagebreak>";
+            echo "($zip)($city)($area)($address)($name)($title)($cust_no)<br>";
+            echo "<div class='pagebreak'></div>";
         }
     }
 ?>
