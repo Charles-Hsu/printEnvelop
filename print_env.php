@@ -14,6 +14,31 @@ h1 {
 
 .pagebreak { page-break-before: always; } /* page-break-after works, as well */
 
+.font{
+  /* font-family: DFKai-sb; */
+  font-family: BiauKai;
+}
+
+@media print {
+    html, body {
+        width: 238mm;
+        height: 126mm;        
+    }
+    .page {
+        margin: 0;
+        border: initial;
+        border-radius: initial;
+        width: initial;
+        min-height: initial;
+        box-shadow: initial;
+        background: initial;
+        page-break-after: always;
+    }
+}
+
+/* $mpdf->WriteHTML('<pagebreak sheet-size="238mm 126mm" />'); */
+
+
 </style>
 </head>
 <body>
@@ -72,12 +97,15 @@ h1 {
             $zip_row = $r->fetchArray();
             $city = $zip_row[0];
             $area = $zip_row[1];
-
-            echo "<div class='zip'>($zip)</div>";
-            echo "<div class='cityArea'>($city)($area)</div>";
-            echo "<div class='address'>($address)</div>";
-            echo "<div class='nameTitle'>($name) ($title)</div>";
-            echo "<div class='cust_no'>($cust_no)</div>";
+            echo "<div class='page'>";
+            echo "<div class='subpage'>";
+            echo "<div class='font zip'>($zip)</div>";
+            echo "<div class='font cityArea'>($city)($area)</div>";
+            echo "<div class='font address'>($address)</div>";
+            echo "<div class='font nameTitle'>($name) ($title)</div>";
+            echo "<div class='font cust_no'>($cust_no)</div>";
+            echo "</div>";
+            echo "</div>";
             echo "<div class='pagebreak'></div>";
         }
     }
