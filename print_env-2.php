@@ -84,19 +84,21 @@
             padding-left: 5px;
         }
         .cust_no {
-            font-size: 16px;
+            font-size: 12px;
             /* margin-left: 450px; */
             /* position:absolute; */
             text-align:right;
             margin-right: 100px;
+            margin-top: 30px;
             font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
         }
         .note {
-            font-size: 16px;
+            font-size: 18px;
             /* position:absolute; */
             /* margin-left: 300px; */
             text-align:right;
             margin-right: 100px;
+            margin-top: 10px;
             /* font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; */
         }
     }
@@ -181,8 +183,8 @@
             echo "          <div class='font cityArea'>$city$area</div>";
             echo "          <div class='font address'>$address</div>";
             echo "          <div class='font nameTitle'>$name $title</div>";
-            echo "          <div class='font note'>♡母親節♡感恩活動，即日起至5/15為止</div>";
-            echo "          <div class='font note'>憑《<b>信封</b>》來就送感恩小禮物</div>";
+            echo "          <div class='font note'>♡母親節♡感恩活動，5/10至5/21為止♡</div>";
+            // echo "          <div class='font note'>憑《<b>信封</b>》來就送感恩小禮物</div>";
             echo "          <div class='font cust_no'>$cust_no</div>";
             echo "      </div>";
             echo "  </div>";
